@@ -1,6 +1,9 @@
 {
     "gradlew": [
         "gradle",
-        "NiceHttp"
+        "NewPipeExtractor",
+        "NiceHttp",
+        "OverlappingPanels",
+        "UniFile"
     ]
 }

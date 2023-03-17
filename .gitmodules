@@ -4,3 +4,12 @@
 [submodule "NiceHttp"]
 	path = NiceHttp
 	url = git@github.com:Blatzar/NiceHttp.git
+[submodule "UniFile"]
+	path = UniFile
+	url = git@github.com:tachiyomiorg/UniFile.git
+[submodule "OverlappingPanels"]
+	path = OverlappingPanels
+	url = git@github.com:discord/OverlappingPanels.git
+[submodule "NewPipeExtractor"]
+	path = NewPipeExtractor
+	url = git@github.com:TeamNewPipe/NewPipeExtractor.git
