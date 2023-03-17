@@ -1,3 +1,6 @@
 [submodule "gradle"]
 	path = gradle
 	url = git@github.com:recloudstream/gradle.git
+[submodule "NiceHttp"]
+	path = NiceHttp
+	url = git@github.com:Blatzar/NiceHttp.git
