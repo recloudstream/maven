@@ -21,9 +21,9 @@ async def gradlew(project):
     # TODO: this needs to be done in a better way
     await run_project(project, dedent(f"""
         chmod +x gradlew
-        ./gradlew install
-        ./gradlew installDebug
-        ./gradlew publishToMavenLocal
+        ./gradlew publishToMavenLocal || \\
+        ./gradlew install || \\
+        ./gradlew installDebug || \\
         ./gradlew publishReleasePublicationToMavenLocal
     """))
                       
