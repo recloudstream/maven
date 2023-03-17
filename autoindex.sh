@@ -27,6 +27,8 @@ shdir_listing_html() {
 <ul>"
 
     for _dir in $(find $1 -maxdepth 1 | sort); do
+        [ "$_dir" = "$1" ] && continue
+
         local _dirname=$(basename $_dir)
         [ "$_dirname" = "index.html" ] && continue
 
