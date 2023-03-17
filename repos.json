@@ -5,5 +5,8 @@
         "NiceHttp",
         "OverlappingPanels",
         "UniFile"
+    ],
+    "maven": [
+        "jadb"
     ]
 }

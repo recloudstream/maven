@@ -4,12 +4,8 @@ from textwrap import dedent
 
 repos = load(open("./repos.json", "r", encoding="utf-8"))
 
-async def gradlew(project):
-    proc = await asyncio.create_subprocess_shell(dedent(f"""
-        cd {project}
-        chmod +x gradlew
-        ./gradlew publishToMavenLocal
-    """),
+async def run_project(project, script):
+    proc = await asyncio.create_subprocess_shell(f"cd {project}\n{script}",
      stdout=asyncio.subprocess.PIPE,
     stderr=asyncio.subprocess.PIPE)
     
@@ -20,10 +16,26 @@ async def gradlew(project):
         print(f"[{project}] stdout:\n{stdout.decode()}")
     if stderr:
         print(f"[{project}] stdout:\n{stderr.decode()}")
+
+async def gradlew(project):
+    await run_project(project, dedent(f"""
+        chmod +x gradlew
+        ./gradlew install; ./gradlew publishToMavenLocal
+    """))
+                      
+async def maven(project):
+    await run_project(project, dedent(f"""
+        mvn install -DskipTests
+    """))
     
 async def main():
-    await asyncio.gather(*[
+    jobs = []
+    jobs.extend([
         gradlew(repo) for repo in repos["gradlew"]
     ])
+    jobs.extend([
+        maven(repo) for repo in repos["maven"]
+    ])
+    await asyncio.gather(*jobs)
     
 asyncio.run(main())

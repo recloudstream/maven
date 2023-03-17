@@ -13,3 +13,6 @@
 [submodule "NewPipeExtractor"]
 	path = NewPipeExtractor
 	url = git@github.com:TeamNewPipe/NewPipeExtractor.git
+[submodule "jadb"]
+	path = jadb
+	url = git@github.com:vidstige/jadb.git
