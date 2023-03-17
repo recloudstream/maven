@@ -20,7 +20,7 @@ async def run_project(project, script):
 async def gradlew(project):
     await run_project(project, dedent(f"""
         chmod +x gradlew
-        ./gradlew install; ./gradlew publishToMavenLocal
+        ./gradlew install; ./gradlew publishToMavenLocal; ./gradlew publishReleasePublicationToMavenLocal
     """))
                       
 async def maven(project):
