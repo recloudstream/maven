@@ -18,9 +18,13 @@ async def run_project(project, script):
         print(f"[{project}] stdout:\n{stderr.decode()}")
 
 async def gradlew(project):
+    # TODO: this needs to be done in a better way
     await run_project(project, dedent(f"""
         chmod +x gradlew
-        ./gradlew install; ./gradlew publishToMavenLocal; ./gradlew publishReleasePublicationToMavenLocal
+        ./gradlew install
+        ./gradlew installDebug
+        ./gradlew publishToMavenLocal
+        ./gradlew publishReleasePublicationToMavenLocal
     """))
                       
 async def maven(project):
