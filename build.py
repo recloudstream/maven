@@ -25,3 +25,5 @@ async def main():
     await asyncio.gather(*[
         gradlew(repo) for repo in repos["gradlew"]
     ])
+    
+asyncio.run(main())
