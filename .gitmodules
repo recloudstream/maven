@@ -16,3 +16,6 @@
 [submodule "jadb"]
 	path = jadb
 	url = git@github.com:vidstige/jadb.git
+[submodule "nanojson"]
+	path = nanojson
+	url = git@github.com:TeamNewPipe/nanojson.git
