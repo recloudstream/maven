@@ -1,0 +1,29 @@
+name: Update submodules
+
+on:
+  push:
+  workflow_dispatch:
+
+
+concurrency:
+  group: "update"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      
+      - name: Update submodules
+        run: git submodule update --remote --init --recursive
+
+      - name: Push to github
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m "chore: update submodules" || exit 0   # do not error if nothing to commit
+          git push
