@@ -3,10 +3,7 @@ name: Update submodules
 on:
   push:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Update submodules"]
-    types:
-      - completed
+
 
 concurrency:
   group: "update"
