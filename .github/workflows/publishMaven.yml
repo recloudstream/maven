@@ -3,6 +3,10 @@ name: Publish Maven to GitHub Pages
 on:
   push:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Update submodules"]
+    types:
+      - completed
 
 permissions:
   contents: read
