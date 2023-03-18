@@ -6,7 +6,7 @@
 	url = git@github.com:Blatzar/NiceHttp.git
 [submodule "UniFile"]
 	path = UniFile
-	url = git@github.com:tachiyomiorg/UniFile.git
+	url = git@github.com:recloudstream/UniFile.git
 [submodule "OverlappingPanels"]
 	path = OverlappingPanels
 	url = git@github.com:discord/OverlappingPanels.git
